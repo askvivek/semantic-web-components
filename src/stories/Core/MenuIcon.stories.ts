@@ -1,11 +1,10 @@
-import IconButton from "../../components/atoms/IconButton";
-import UserIcon from "../../components/atoms/Icons/UserIcon";
 import type { Meta, StoryObj } from "@storybook/react";
+import MenuIcon from "../../components/atoms/Icons/MenuIcon";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: "Components/Core/IconButton",
-  component: IconButton,
+  title: "Components/Core/Icons/MenuIcon",
+  component: MenuIcon,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: "centered",
@@ -14,41 +13,20 @@ const meta = {
   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: "color" },
+    height: { control: "" },
+    width: { control: "" },
+    fill: { control: "" },
   },
-} satisfies Meta<typeof IconButton>;
+} satisfies Meta<typeof MenuIcon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
+export const MenuIconSample: Story = {
   args: {
-    primary: true,
-    label: "IconButton",
-    icon: UserIcon,
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    label: "IconButton",
-    icon: UserIcon,
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: "large",
-    label: "IconButton",
-    icon: UserIcon,
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: "small",
-    label: "IconButton",
-    icon: UserIcon,
+    height: 32,
+    width: 32,
+    fill: "blue",
   },
 };

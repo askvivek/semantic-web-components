@@ -21,7 +21,7 @@ interface IconButtonProps {
   /**
    * Button icon
    */
-  icon: React.ReactNode;
+  icon: React.FC;
   /**
    * Optional icon position left or right default will be left
    */
@@ -45,20 +45,29 @@ const IconButton = ({
   ...props
 }: IconButtonProps) => {
   const mode = primary ? "button--primary" : "button--secondary";
+  const Icon = icon;
   return (
     <button
       type="button"
       className={["button", `button--${size}`, mode].join(" ")}
       {...props}
+      style={{ backgroundColor: backgroundColor }}
     >
-      {iconPosition == "left" ? <span className="left">{icon}</span> : ""}
+      {iconPosition == "left" ? (
+        <span className="left">
+          <Icon />
+        </span>
+      ) : (
+        ""
+      )}
       {label}
-      {iconPosition == "right" ? <span className="right">{icon}</span> : ""}
-      <style jsx>{`
-        button {
-          background-color: ${backgroundColor};
-        }
-      `}</style>
+      {iconPosition == "right" ? (
+        <span className="right">
+          <Icon />
+        </span>
+      ) : (
+        ""
+      )}
     </button>
   );
 };

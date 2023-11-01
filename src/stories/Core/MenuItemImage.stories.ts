@@ -1,11 +1,10 @@
-import IconButton from "../../components/atoms/IconButton";
-import UserIcon from "../../components/atoms/Icons/UserIcon";
+import MenuItemImage from "../../components/atoms/MenuItemImage";
 import type { Meta, StoryObj } from "@storybook/react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: "Components/Core/IconButton",
-  component: IconButton,
+  title: "Components/Core/MenuItemImage",
+  component: MenuItemImage,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: "centered",
@@ -14,41 +13,19 @@ const meta = {
   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: "color" },
+    imageUrl: { control: "" },
+    altText: { control: "" },
   },
-} satisfies Meta<typeof IconButton>;
+} satisfies Meta<typeof MenuItemImage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
+export const MenuItemImageSample: Story = {
   args: {
-    primary: true,
-    label: "IconButton",
-    icon: UserIcon,
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    label: "IconButton",
-    icon: UserIcon,
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: "large",
-    label: "IconButton",
-    icon: UserIcon,
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: "small",
-    label: "IconButton",
-    icon: UserIcon,
+    altText: "TACO KIT",
+    imageUrl:
+      "https://www.moes.com/-/media/moes/menu/meal-kits/moes_838421_website-card-menu-item_taco-kit_690x320_1-system_v1.png?v=1&d=20230206T130728Z&la=en&h=320&w=690&hash=26846A274E64074153A9CDB026797B8C",
   },
 };

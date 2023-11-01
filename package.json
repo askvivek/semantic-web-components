@@ -1,18 +1,23 @@
 {
   "name": "semantic-web-components",
   "version": "1.0.0",
-  "description": "",
+  "description": "Create web application with semantic html elements for SEO and accessibility",
   "main": "index.js",
-  "private": "true",
+  "keywords": [
+    "semantic-web-components",
+    "semantic html",
+    "seo",
+    "accessibility",
+    "storybook"
+  ],
+  "author": "Vivek Manoharan",
+  "license": "ISC",
   "scripts": {
     "build": "webpack",
     "test": "jest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
